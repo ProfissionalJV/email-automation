@@ -1,0 +1,36 @@
+// File: send_emails.gs
+// Versão demo/anonimizada
+
+function sendEmailsFromSheetDemo() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("Página1"); // ajuste conforme
+  if (!sheet) {
+    Logger.log("Aba 'Página1' não encontrada (demo).");
+    return;
+  }
+  var data = sheet.getDataRange().getValues();
+
+  for (var i = 1; i < data.length; i++) {
+    var crc = data[i][0];
+    var pid = data[i][1];
+    var recipient = data[i][2];
+
+    if (pid && crc && recipient) {
+      var subject = "Avaliação do Programa - (Demo)";
+      var body = "Olá " + pid + ",\n\nEste é um e-mail de demonstração. (Link do formulário substituído por placeholder.)\n\nAtenciosamente,\nEquipe XXXX";
+
+      // Segurança: comentar envio real em repositório público
+      // GmailApp.sendEmail(recipient, subject, body);
+
+      // Registro simulado em planilha
+      sheet.getRange(i + 1, 4).setValue("Enviado (demo)");
+      Logger.log("Simulado envio para: " + recipient + " | Assunto: " + subject);
+      Utilities.sleep(500);
+    }
+  }
+  return "Processo de envio (demo) finalizado.";
+}
+
+function doGet() {
+  return HtmlService.createHtmlOutput("Demo: API de envio desativada no repositório público.");
+}
