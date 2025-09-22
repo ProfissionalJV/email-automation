@@ -19,9 +19,9 @@ Um script faz a leitura de uma base de dados (donatário, CRC, quantidade, data)
 Poderão ser Encontrados na pasta docs (os prints são de estruturas 'demo' que apresentam características semelhantes ao original)
 
 ## 📂 Estrutura da pasta
-src/ → código AppsScript de exemplo
-docs/ → prints de tela
-resultados/ → prints de tela da comprovação do envio e recebimento dos e-mails.
+- src/ → código AppsScript de exemplo
+- docs/ → prints de tela
+- resultados/ → prints de tela da comprovação do envio e recebimento dos e-mails.
 
 
 ---
